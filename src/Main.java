@@ -2,10 +2,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Animal lion = new Animal("Leo", "Lion", 5);
-        Animal elephant = new Animal("Ella", "Elephant", 10);
+        Animal lion = new Animal("Leo", "Lion",7);
+        Animal elephant = new Animal("Ella", "Elephant", 12);
 
-        Zookeeper zookeeper = new Zookeeper("John", 7);
+        Zookeeper zookeeper = new Zookeeper("John", 13);
         Zoo zoo = new Zoo("City Zoo", "Almaty");
 
         System.out.println(lion);
