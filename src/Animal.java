@@ -1,5 +1,6 @@
-public class Animal {
+import java.util.Objects;
 
+public class Animal {
     private String name;
     private String species;
     private int age;
@@ -41,5 +42,18 @@ public class Animal {
     @Override
     public String toString() {
         return "Animal{name='" + name + "', species='" + species + "', age=" + age + "}";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Animal animal = (Animal) obj;
+        return name.equals(animal.name) && species.equals(animal.species);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, species);
     }
 }
