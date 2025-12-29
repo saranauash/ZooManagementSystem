@@ -1,27 +1,49 @@
-public class Zoo {
+import java.util.*;
 
+public class Zoo {
     private String zooName;
     private String location;
+    private List<Animal> animals;
 
     public Zoo(String zooName, String location) {
         this.zooName = zooName;
         this.location = location;
+        this.animals = new ArrayList<>();
     }
 
-    public String getZooName() {
-        return zooName;
+    public void addAnimal(Animal animal) {
+        animals.add(animal);
     }
 
-    public void setZooName(String zooName) {
-        this.zooName = zooName;
+    public void makeAnimalSound(Animal animal) {
+        animal.makeSound();
     }
 
-    public String getLocation() {
-        return location;
+    public List<Animal> filterAnimalsByAge(int ageLimit) {
+        List<Animal> filteredAnimals = new ArrayList<>();
+        for (Animal animal : animals) {
+            if (animal.getAge() > ageLimit) {
+                filteredAnimals.add(animal);
+            }
+        }
+        return filteredAnimals;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public Animal findAnimalByName(String name) {
+        for (Animal animal : animals) {
+            if (animal.getName().equals(name)) {
+                return animal;
+            }
+        }
+        return null;
+    }
+
+    public void sortAnimalsByAge() {
+        animals.sort(Comparator.comparingInt(Animal::getAge));
+    }
+
+    public List<Animal> getAnimals() {
+        return animals;
     }
 
     public void openZoo() {
@@ -33,4 +55,3 @@ public class Zoo {
         return "Zoo{name='" + zooName + "', location='" + location + "'}";
     }
 }
-
