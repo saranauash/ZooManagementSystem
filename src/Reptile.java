@@ -5,6 +5,6 @@ public class Reptile extends Animal {
 
     @Override
     public void makeSound() {
-        System.out.println(getName() + " hisses");
+        System.out.println(getName() + " hisses.");
     }
 }
